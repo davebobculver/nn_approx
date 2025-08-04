@@ -7,7 +7,7 @@ import numpy as np
 class Net(torch.nn.Module):
     def __init__(self, act, input_size,  *args):
         super(Net, self).__init__()
-        self.act = act 
+        self.act = act # this is out activation function, it can be torch.relu or torch.cos, or anything you want to make
         self.hidden_layers = torch.nn.ModuleList()
         for layer_size in args:
             self.hidden_layers.append(torch.nn.Linear(input_size, layer_size))
